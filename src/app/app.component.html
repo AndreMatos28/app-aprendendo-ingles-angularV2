@@ -1,15 +1,16 @@
-<!-- <app-topo></app-topo>
-<div *ngIf="jogoEmAndamento; else fimDeJogo">
-    <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
+<app-top></app-top>
+
+<!-- <div *ngIf="jogoEmAndamento; else fimDeJogo">
+    <app-panel (encerrarJogo)="encerrarJogo($event)"></app-panel>
 </div> -->
-<app-panel></app-panel>
 
 <ng-template #fimDeJogo >
-    <div *ngIf="encerramento === 'Derrota'; else fimDeJogoVitoria" class="row">
+    <div Ngif="encerramento === 'Derrota'; else fimDeJogoVitoria" class="row">
         <div class="container">
             <div class="col">
-                <h3 style="color: red">Você perdeu o jogo</h3>
-                <button class="btn btn-primary" (click)="reiniciar()">Jogar novamente</button>
+                <h3 style="color: rgba(255, 0, 0, 0.616)">Você perdeu o jogo 1</h3>
+                <button class="btn btn-primary"
+                (click)="reiniciar()">Jogar novamente 1</button>
             </div>
         </div>
     </div>
@@ -20,9 +21,31 @@
         <div class="container">
             <div class="col">
                 <h3 style="color: green">Você Ganhou o jogo</h3>
-                <button class="btn btn-primary" (click)="reiniciar()">Jogar novamente</button>
+                <button class="btn btn-primary" (click)="reiniciar()">Jogar novamente1</button>
             </div>
         </div>
     </div>
 </ng-template>
 
+<ng-template #fimDeJogo>
+@if (encerramento === "derrota") {
+  <div class="row">
+    <div class="container">
+        <div class="col">
+            <h3 style="color: red">Você perdeu o jogo 2</h3>
+            <button class="btn btn-primary"
+            (click)="reiniciar()">Jogar novamente 2</button>
+        </div>
+    </div>
+</div>
+} @else {
+  <div class="row">
+    <div class="container">
+        <div class="col">
+            <h3 style="color: green">Você Ganhou o jogo</h3>
+            <button class="btn btn-primary" (click)="reiniciar()">Jogar novamente2</button>
+        </div>
+    </div>
+</div>
+}
+</ng-template>
